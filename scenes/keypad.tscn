@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx6djp8u8cxq8"]
+
+[ext_resource type="Script" uid="uid://hvj28kljryef" path="res://scripts/keypad.gd" id="1_vxa2g"]
+[ext_resource type="Texture2D" uid="uid://b30aqubhejrsk" path="res://assets/buttons.png" id="2_gjsb8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dgaj"]
+atlas = ExtResource("2_gjsb8")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3le2"]
+atlas = ExtResource("2_gjsb8")
+region = Rect2(16, 16, 16, 16)
+
+[node name="Keypad" type="VBoxContainer"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 28.0
+offset_bottom = 37.0
+script = ExtResource("1_vxa2g")
+
+[node name="Buttons123" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="Buttons123"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "1"
+
+[node name="Button2" type="Button" parent="Buttons123"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "2"
+
+[node name="Button3" type="Button" parent="Buttons123"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "3"
+
+[node name="Buttons456" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="Buttons456"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "4"
+
+[node name="Button5" type="Button" parent="Buttons456"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "5"
+
+[node name="Button6" type="Button" parent="Buttons456"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "6"
+
+[node name="Buttons789" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="Buttons789"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "7"
+
+[node name="Button8" type="Button" parent="Buttons789"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "8"
+
+[node name="Button9" type="Button" parent="Buttons789"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "9"
+
+[node name="Buttons0" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ButtonDelete" type="TextureButton" parent="Buttons0"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_1dgaj")
+
+[node name="Button0" type="Button" parent="Buttons0"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+text = "0"
+
+[node name="ButtonEnter" type="TextureButton" parent="Buttons0"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_y3le2")
+
+[connection signal="pressed" from="Buttons123/Button1" to="." method="press" binds= [0]]
+[connection signal="pressed" from="Buttons123/Button2" to="." method="press" binds= [1]]
+[connection signal="pressed" from="Buttons123/Button3" to="." method="press" binds= [2]]
+[connection signal="pressed" from="Buttons456/Button4" to="." method="press" binds= [3]]
+[connection signal="pressed" from="Buttons456/Button5" to="." method="press" binds= [4]]
+[connection signal="pressed" from="Buttons456/Button6" to="." method="press" binds= [5]]
+[connection signal="pressed" from="Buttons789/Button7" to="." method="press" binds= [6]]
+[connection signal="pressed" from="Buttons789/Button8" to="." method="press" binds= [7]]
+[connection signal="pressed" from="Buttons789/Button9" to="." method="press" binds= [8]]
+[connection signal="pressed" from="Buttons0/ButtonDelete" to="." method="press" binds= [9]]
+[connection signal="pressed" from="Buttons0/Button0" to="." method="press" binds= [10]]
+[connection signal="pressed" from="Buttons0/ButtonEnter" to="." method="press" binds= [11]]
